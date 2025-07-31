@@ -40,3 +40,24 @@ const initialTasks = [
     status: "done",
   },
 ];
+
+//Selecting the relevant status containers.
+
+const columns = {
+  todo: document.querySelector('[data-status="todo"] .tasks-container'),
+  doing: document.querySelector('[data-status="doing"] .tasks-container'),
+  done: document.querySelector('[data-status="done"] .tasks-container'),
+ 
+};
+
+//Loop through each and insert to the correct column.
+initialTasks.forEach((task) => {
+  const taskDiv = document.createElement("div");
+  taskDiv.textContent = task.title;
+  taskDiv.classList.add("task-div");
+
+  //if statement to match the task to its respective status.
+  if (columns[task.status]) {
+    columns[task.status].appendChild(taskDiv);
+  }
+});
