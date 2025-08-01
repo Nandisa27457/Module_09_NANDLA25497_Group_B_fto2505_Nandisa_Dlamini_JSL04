@@ -52,12 +52,16 @@ const columns = {
 
 //Loop through each and insert to the correct column.
 initialTasks.forEach((task) => {
-  const taskDiv = document.createElement("div");
-  taskDiv.textContent = task.title;
-  taskDiv.classList.add("task-div");
+  const taskDiv = document.createElement("div");// Created a div within the task container
+  taskDiv.textContent = task.title;// Adding the title text into the created div
+  taskDiv.classList.add("task-div");//adding the class to the div that is styled in the CSS file.
 
-  //if statement to match the task to its respective status.
+  //if statement to match the task to its respective status matching the fetched columns.
   if (columns[task.status]) {
-    columns[task.status].appendChild(taskDiv);
+    columns[task.status].appendChild(taskDiv);//Appending the status to the right column.
   }
 });
+
+//Modal 
+
+
