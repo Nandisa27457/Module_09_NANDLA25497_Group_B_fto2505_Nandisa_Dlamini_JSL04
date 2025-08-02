@@ -1,4 +1,4 @@
-import { initialTasks } from "./initialData";
+import { initialTasks } from "./initialData.js";
 
 /**
  * An object mapping task statuses to their corresponding task container elements in the DOM.
@@ -6,10 +6,10 @@ import { initialTasks } from "./initialData";
  * Each key (`todo`, `doing`, `done`) represents a task status, and its value is the `<div>` element
  * where tasks of that status should be displayed.
  *
- * @type {{ 
- *   todo: HTMLDivElement 
+ * @type {{
+ *   todo: HTMLDivElement
  *   doing: HTMLDivElement
- *   done: HTMLDivElement 
+ *   done: HTMLDivElement
  * }}
  */
 
@@ -27,7 +27,7 @@ const columns = {
 initialTasks.forEach((task) => {
   const taskDiv = document.createElement("div"); // Created a div within the task container
   taskDiv.textContent = task.title; // Adding the title text into the created div
-  taskDiv.dataset.description = task.description;//Adding task description
+  taskDiv.dataset.description = task.description; //Adding task description
   taskDiv.classList.add("task-div"); //adding the class to the div that is styled in the CSS file.
 
   //if statement to match the task to its respective status matching the fetched columns.
@@ -36,9 +36,9 @@ initialTasks.forEach((task) => {
   }
 });
 
+//=======
 //Modal
-
-
+//=======
 /** @type {HTMLDivElement} 
 const modal = document.getElementById("modal");
 /** @type {HTMLInputElement} 
@@ -56,22 +56,21 @@ const taskDescriptionInput = document.getElementById("taskDescription");
 const taskStatusSelect = document.getElementById("taskStatus");
 const closeBtn = document.querySelector(".close-btn");
 
-
 /**
-   * Handles the click event on a task to open the modal
-   * and populate it with the task's details.
-   */
+ * Handles the click event on a task to open the modal
+ * and populate it with the task's details.
+ */
 //Event listener for tasks
 document.querySelectorAll(".task-div").forEach((taskDiv) => {
   taskDiv.addEventListener("click", () => {
     taskTitleInput.value = taskDiv.textContent; //Ensure task title input includes relevant task content
     taskDescriptionInput.value = taskDiv.dataset.description; // Ensure description matches task.
-    
+
     //Select status that applies to the column of the relevant task
     const parentColumn = taskDiv
       .closest(".column-div")
       .getAttribute("data-status");
-    taskStatusSelect.value = parentColumn;//find parent first column that has the task clicked.
+    taskStatusSelect.value = parentColumn; //find parent first column that has the task clicked.
 
     //Remove hidden styling on CSS
     modal.classList.remove("hidden");
