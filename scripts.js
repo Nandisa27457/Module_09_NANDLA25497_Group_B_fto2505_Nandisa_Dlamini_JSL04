@@ -24,6 +24,14 @@ const columns = {
  * Loops through the initialTasks array and renders each task
  * in the appropriate column based on its status. Adds a click
  */
+/**
+ * Loops through each task in the initialTasks array and performs an operation on it.
+ *
+ * @param {Object} task - A single task object from the initialTasks array.
+ * @param {number} index - The index of the task in the array (optional).
+ * @param {Object[]} array - The full initialTasks array being iterated over (optional).
+ */
+
 initialTasks.forEach((task) => {
   const taskDiv = document.createElement("div"); // Created a div within the task container
   taskDiv.textContent = task.title; // Adding the title text into the created div
@@ -39,6 +47,7 @@ initialTasks.forEach((task) => {
 //=======
 //Modal
 //=======
+
 /** @type {HTMLDivElement} 
 const modal = document.getElementById("modal");
 /** @type {HTMLInputElement} 
