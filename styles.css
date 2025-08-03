@@ -255,32 +255,32 @@ input#taskTitle {
   border-color: #828da372;
   border-width: 1px;
   border-radius: 7px;
-  height:40px;
+  height: 40px;
 }
 
 textarea#taskDescription {
   border-style: solid;
   border-color: #828da372;
   border-width: 1px;
-  height:113px;
+  height: 113px;
   border-radius: 7px;
 }
 
 select#taskStatus {
   border-style: solid;
   border-color: #828da372;
-  border-width: 1px; 
-  color: black ;
+  border-width: 1px;
+  color: black;
   position: relative;
-  height:40px;
+  height: 40px;
   border-radius: 7px;
-  
 }
 
 label {
   color: #828fa3;
   font-family: Plus Jakarta Sans;
-  font-size:12px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 span.close-btn {
